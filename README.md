@@ -1,3 +1,3 @@
-# CppTemplate
+# CGFS
 
-C++ Project Template
+Computer Graphics From Scratch

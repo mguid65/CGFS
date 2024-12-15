@@ -1,4 +1,4 @@
-#include <CppTemplate/Print.hpp>
+#include <CppTemplate/Canvas.hpp>
 
 int main() {
   mguid::Print();

@@ -4,7 +4,7 @@ set(UNIT_TEST_SRC
 
 add_executable(unit_tests)
 target_sources(unit_tests PRIVATE ${UNIT_TEST_SRC})
-target_link_libraries(unit_tests PRIVATE cpp_template Catch2::Catch2WithMain)
+target_link_libraries(unit_tests PRIVATE cgfs Catch2::Catch2WithMain)
 
 enable_testing()
 

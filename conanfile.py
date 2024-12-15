@@ -27,6 +27,7 @@ class CppTemplateConan(ConanFile):
         copy(self, "test/*", self.recipe_folder, self.export_sources_folder)
 
     def requirements(self):
+        self.requires('fmt/11.0.2')
         self.test_requires('catch2/3.5.2')
 
     def test(self):
