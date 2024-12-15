@@ -51,13 +51,13 @@ struct Light : LightProperties {
   }
 
   template <typename... Callables>
-  decltype(auto) visit(Callables&&... callables) {
+  constexpr decltype(auto) visit(Callables&&... callables) {
     auto overload_set = Overload{callables...};
     return std::visit(overload_set, *this);
   }
 
   template <typename... Callables>
-  decltype(auto) visit(Callables&&... callables) const {
+  constexpr decltype(auto) visit(Callables&&... callables) const {
     auto overload_set = Overload{callables...};
     return std::visit(overload_set, *this);
   }

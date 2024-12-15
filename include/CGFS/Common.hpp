@@ -89,34 +89,34 @@ constexpr double basically_infinity = 1'000'000'000'000;
 
 }  // namespace cgfs
 
-inline cgfs::Vec3d operator-(const cgfs::Vec3d& lhs, const cgfs::Vec3d& rhs) {
+constexpr inline cgfs::Vec3d operator-(const cgfs::Vec3d& lhs, const cgfs::Vec3d& rhs) {
   return cgfs::Vec3d{lhs.get<"x">() - rhs.get<"x">(), lhs.get<"y">() - rhs.get<"y">(),
                      lhs.get<"z">() - rhs.get<"z">()};
 }
 
-inline cgfs::Vec3d operator-(const cgfs::Vec3d& val) {
+constexpr inline cgfs::Vec3d operator-(const cgfs::Vec3d& val) {
   return cgfs::Vec3d{-val.get<"x">(), -val.get<"y">(), -val.get<"z">()};
 }
 
-inline cgfs::Vec3d operator+(const cgfs::Vec3d& lhs, const cgfs::Vec3d& rhs) {
+constexpr inline cgfs::Vec3d operator+(const cgfs::Vec3d& lhs, const cgfs::Vec3d& rhs) {
   return cgfs::Vec3d{lhs.get<"x">() + rhs.get<"x">(), lhs.get<"y">() + rhs.get<"y">(),
                      lhs.get<"z">() + rhs.get<"z">()};
 }
 
-inline cgfs::Vec3d operator*(double val, const cgfs::Vec3d& rhs) {
+constexpr inline cgfs::Vec3d operator*(double val, const cgfs::Vec3d& rhs) {
   return cgfs::Vec3d{rhs.get<"x">() * val, rhs.get<"y">() * val, rhs.get<"z">() * val};
 }
 
-inline cgfs::Vec3d operator*(const cgfs::Vec3d& rhs, double val) {
+constexpr inline cgfs::Vec3d operator*(const cgfs::Vec3d& rhs, double val) {
   return cgfs::Vec3d{rhs.get<"x">() * val, rhs.get<"y">() * val, rhs.get<"z">() * val};
 }
 
-inline cgfs::Vec3d operator/(const cgfs::Vec3d& lhs, double val) {
+constexpr inline cgfs::Vec3d operator/(const cgfs::Vec3d& lhs, double val) {
   return cgfs::Vec3d{lhs.get<"x">() / val, lhs.get<"y">() / val, lhs.get<"z">() / val};
 }
 
-inline cgfs::Vec3d operator*(const cgfs::Mat3d& mat, const cgfs::Vec3d& vec3) {
-  std::array<double, 3> result{0.0, 0.0, 0.0};
+constexpr inline cgfs::Vec3d operator*(const cgfs::Mat3d& mat, const cgfs::Vec3d& vec3) {
+  std::array result{0.0, 0.0, 0.0};
   std::array<double, 3> vec{vec3.get<0>(), vec3.get<1>(), vec3.get<2>()};
 
   for (size_t i = 0; i < 3; i++) {

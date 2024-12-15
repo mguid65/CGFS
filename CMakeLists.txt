@@ -24,16 +24,19 @@ if (SANITIZE)
     enable_sanitizer()
 endif ()
 
+add_compile_options(-fconstexpr-depth=1024 -fconstexpr-ops-limit=335544320)
+
 set(CGFS_HEADERS
         include/CGFS/Canvas.hpp
 )
 
 find_package(fmt REQUIRED)
+find_package(SDL2 REQUIRED)
 
 add_library(cgfs INTERFACE)
 target_include_directories(cgfs INTERFACE include)
 target_sources(cgfs INTERFACE ${CGFS_HEADERS})
-target_link_libraries(cgfs INTERFACE fmt::fmt)
+target_link_libraries(cgfs INTERFACE fmt::fmt SDL2::SDL2)
 set_target_properties(cgfs PROPERTIES LINKER_LANGUAGE CXX)
 
 install(DIRECTORY include/ DESTINATION include)

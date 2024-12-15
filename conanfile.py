@@ -17,6 +17,7 @@ class CppTemplateConan(ConanFile):
     settings = 'os', 'compiler', 'build_type', 'arch'
     generators = 'CMakeDeps', 'CMakeToolchain'
     package_type = 'header-library'
+    build_policy = 'missing'
 
     def export_sources(self):
         copy(self, "LICENSE.md", self.recipe_folder, self.export_sources_folder)
@@ -27,6 +28,7 @@ class CppTemplateConan(ConanFile):
         copy(self, "test/*", self.recipe_folder, self.export_sources_folder)
 
     def requirements(self):
+        self.requires("sdl/2.30.8")
         self.requires('fmt/11.0.2')
         self.test_requires('catch2/3.5.2')
 

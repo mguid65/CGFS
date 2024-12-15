@@ -13,7 +13,7 @@ namespace cgfs {
 struct Viewport : DimensionsF64 {
   using DimensionsF64::DimensionsF64;
 
-  Viewport(DimensionsF64 dim) : DimensionsF64(std::move(dim)) {}
+  constexpr Viewport(DimensionsF64 dim) : DimensionsF64(std::move(dim)) {}
 
   using DimensionsF64::get;
 };
